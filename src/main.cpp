@@ -47,9 +47,7 @@ public:
 
 int main(int argc, char *argv[])
 {
-    Num<12>::value;
-
-    cout << list<><< endl;
+    cout <<list<Num<0>>::push<Num<1>>::xs::x::value<< endl;
     //cout << Add<Num<1>,Num<2> >::result<< endl;
     return 0;
 }

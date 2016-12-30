@@ -3,33 +3,27 @@
 
 class list_end{};
 
-template <typename T,typename ...left>
+template <typename T,typename left>
 class list_item
 {
 public:
-    typedef T value;
-    typedef list_item value_type;
-    typedef list_item<left...> next;
+    using x=T;
+    using xs=left;
+    using value=list_item<T,left>;
+    template<typename val>
+    using push=list_item<val,value>;
 };
 template <typename T>
-class list_item<T>
-{
-    typedef T value;
-    typedef list_item value_type;
-    typedef list_end next;
-};
-
-class list
-{
-    typedef list_end first;
-};
-template<typename n,typename lst>
-class list_push_front
+class list_item<T,list_end>
 {
 public:
-    typedef list_item<n,lst::first> value;
+    using x=T;
+    using xs=list_end;
+    using value=list_item<T,list_end>;
+    template<typename val>
+    using push=list_item<val,value>;
 };
-
-
+template<typename T>
+using list=list_item<T,list_end>;
 
 #endif // LIST_H

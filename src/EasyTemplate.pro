@@ -13,6 +13,6 @@ HEADERS += \
     char.h \
     chararray.h \
     print.h \
-    map.h \
     easympl.h \
-    list.h
+    list.h \
+    compose.h
