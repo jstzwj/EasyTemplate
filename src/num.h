@@ -142,7 +142,7 @@ public:
 
 
 template<typename n>
-class Add1
+class Succ
 {
 public:
     const static int result=n::value+1;

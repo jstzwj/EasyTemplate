@@ -7,6 +7,8 @@
 #include"chararray.h"
 #include"compose.h"
 #include"list.h"
+#include"map.h"
+
 
 #define mpl_print(x) x()()
 
@@ -19,5 +21,6 @@
 #define mpl_fun_end };
 
 #define mpl_fun_return(ret) typedef ret value;
+
 
 #endif // EASYMPL_H

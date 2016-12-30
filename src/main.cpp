@@ -3,13 +3,15 @@
 using namespace std;
 
 
-mpl_fun_begin(xxx)
-mpl_fun_return(Num<1>)
-mpl_fun_end
+
+
 
 int main(int argc, char *argv[])
 {
-    cout <<xxx::value::value<< endl;
-    //cout << Add<Num<1>,Num<2> >::result<< endl;
+    using lst=list<Num<1>>::push<Num<4>>::push<Num<5>>::push<Num<7>>;
+    cout <<Map<Succ,lst>::value::x::value<< endl;
+    cout <<Map<Succ,lst>::value::xs::x::value<< endl;
+    cout <<Map<Succ,lst>::value::xs::xs::x::value<< endl;
+    cout <<Map<Succ,lst>::value::xs::xs::xs::x::value<< endl;
     return 0;
 }

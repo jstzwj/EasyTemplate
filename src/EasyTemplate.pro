@@ -15,4 +15,5 @@ HEADERS += \
     print.h \
     easympl.h \
     list.h \
-    compose.h
+    compose.h \
+    map.h
