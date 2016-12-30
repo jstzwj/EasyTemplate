@@ -9,8 +9,15 @@
 #include"list.h"
 
 #define mpl_print(x) x()()
-#define mpl_num(x) Num<x>
-#define mpl_add(x,y) Add<x,y>::value
-#define mpl_if(x,y,z) TypeIf<z,y,z>::value
+
+
+#define mpl_fun_begin(name) \
+    class name\
+    {\
+    public:
+
+#define mpl_fun_end };
+
+#define mpl_fun_return(ret) typedef ret value;
 
 #endif // EASYMPL_H

@@ -6,15 +6,17 @@
 class True
 {
 public:
-    typedef bool type;
-    typedef True value_type;
+    typedef bool value_type;
+    typedef True type;
+    const static bool value=true;
     constexpr bool operator ()()const{return true;}
 };
 class False
 {
 public:
-    typedef bool type;
-    typedef False value_type;
+    typedef bool value_type;
+    typedef False type;
+    const static bool value=false;
     constexpr bool operator ()()const{return false;}
 };
 
@@ -103,4 +105,25 @@ public:
     constexpr int operator ()()const{return result;}
 };
 
+
+template<typename n>
+class Not
+{
+public:
+    static_assert(1,"Not operator gets the unexpected param;");
+};
+
+template<>
+class Not<True>
+{
+public:
+    using value=False;
+};
+
+template<>
+class Not<False>
+{
+public:
+    using value=True;
+};
 #endif // BOOL_H

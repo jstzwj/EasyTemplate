@@ -3,6 +3,8 @@
 #include"bool.h"
 #include"if.h"
 
+#define mpl_num(x) Num<x>
+#define mpl_add(x,y) Add<x,y>::value
 
 template<int n>
 class Num

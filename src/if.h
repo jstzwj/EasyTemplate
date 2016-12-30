@@ -2,6 +2,7 @@
 #define IF_H
 #include"bool.h"
 
+#define mpl_if(x,y,z) TypeIf<z,y,z>::value
 
 template<typename condition,typename then_t,typename else_t>
 class TypeIf
