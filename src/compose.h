@@ -6,7 +6,7 @@ template<template<typename a> class m,template<typename b> class n>
 class Compose
 {
 public:
-    template<class T> using value= typename m<typename n<T>::value >::value;
+    template<class T> using value= m<typename n<T>::value >;
     //typedef m<n<n_left...>::value>::value value;
 };
 

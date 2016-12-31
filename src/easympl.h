@@ -8,6 +8,8 @@
 #include"compose.h"
 #include"list.h"
 #include"map.h"
+#include"fold.h"
+#include"filter.h"
 
 
 #define mpl_print(x) x()()

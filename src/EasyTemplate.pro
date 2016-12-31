@@ -16,4 +16,6 @@ HEADERS += \
     easympl.h \
     list.h \
     compose.h \
-    map.h
+    map.h \
+    fold.h \
+    filter.h

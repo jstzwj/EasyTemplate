@@ -2,26 +2,6 @@
 #define BOOL_H
 
 
-
-class True
-{
-public:
-    typedef bool value_type;
-    typedef True type;
-    const static bool value=true;
-    constexpr bool operator ()()const{return true;}
-};
-class False
-{
-public:
-    typedef bool value_type;
-    typedef False type;
-    const static bool value=false;
-    constexpr bool operator ()()const{return false;}
-};
-
-
-
 template<bool b>
 class Bool
 {
@@ -32,25 +12,31 @@ template<>
 class Bool<true>
 {
 public:
-    typedef True value;
+    typedef bool value_type;
+    //typedef True type;
+    const static bool value=true;
+    constexpr bool operator ()()const{return true;}
 };
 
 template<>
 class Bool<false>
 {
 public:
-    typedef False value;
+    typedef bool value_type;
+    //typedef False type;
+    const static bool value=false;
+    constexpr bool operator ()()const{return false;}
 };
 
-
-
+using True=Bool<true>;
+using False=Bool<false>;
 
 
 template<typename T>
 class isTrue
 {
 public:
-    typedef True value;
+    static_assert(1,"isTrue did not get a bool param.");
 };
 
 
@@ -69,6 +55,29 @@ public:
     typedef False value;
 };
 
+
+template<typename T>
+class isFalse
+{
+public:
+    static_assert(1,"isFalse did not get a bool param.");
+};
+
+
+
+template<>
+class isFalse<True>
+{
+public:
+    typedef False value;
+};
+
+template<>
+class isFalse<False>
+{
+public:
+    typedef True value;
+};
 
 template<typename n,typename... left>
 class InterSection
