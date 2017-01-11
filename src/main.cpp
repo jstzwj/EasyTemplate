@@ -3,6 +3,8 @@
 using namespace std;
 
 
+constexpr char str[]="abc";
+
 
 int main(int argc, char *argv[])
 {
@@ -17,10 +19,10 @@ int main(int argc, char *argv[])
     */
 
 
-
-    cout<<list_size<Filter<isTrue,lstbool>::value>::value::value<<endl;
-    cout<<Foldr<Mul,Num<1>,lst>::value::value<<endl;
-    cout<<Map<Compose<Square,Succ>::value,lst>::value::x::value<<endl;
-    cout<<Compose<Square,Succ>::value<Num<7>>::value::value<<endl;
+    cout<<tail<lst>::value::x::value<<endl;
+    //cout<<list_size<Filter<isTrue,lstbool>::value>::value::value<<endl;
+    //cout<<Foldr<Mul,Num<1>,lst>::value::value<<endl;
+    //cout<<Map<Compose<Square,Succ>::value,lst>::value::x::value<<endl;
+    //cout<<Compose<Square,Succ>::value<Num<7>>::value::value<<endl;
     return 0;
 }

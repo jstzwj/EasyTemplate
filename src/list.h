@@ -41,4 +41,21 @@ public:
     using value=Num<0>;
 };
 
+
+//tools
+template<class lst>
+class head
+{
+public:
+    using value=typename lst::x;
+};
+
+template<class lst>
+class tail
+{
+public:
+    using value=typename lst::xs;
+};
+
+
 #endif // LIST_H
